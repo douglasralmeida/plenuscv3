@@ -1,0 +1,54 @@
+[Transporte]
+Transporte=RPCV3
+Arquivo de Transporte=C:\WPLENUS\Plenus.Trp
+Line Printer Daemon=0
+
+
+[Font]
+Name=Lucida Console
+Height=-16
+Pitch=0
+Color=0
+Style=0000
+
+[Desktop]
+Top=290
+Left=511
+Right=849
+Bottom=478
+Bandeja de sistema=1
+
+[Impressora]
+Nome=Epson FX-1050 on LPT1:
+Porta=LPT1:
+Orientação=1
+Papel=1
+Altura=127
+Largura=254
+Escala=0
+Cópias=1
+Fonte default=8
+Qualidade=120
+Cor=1
+Duplex=1
+Resolução Y=144
+Opção=1
+[Impressão]
+Usa impressora default=1
+Faz impressão direta=0
+Filtra caracteres de controle=1
+Interpreta acentuacao=1
+ESC SO ESC SI=1
+CR -> CR+LF=0
+Interpreta "overprint"=0
+Impressora DE=
+Impressora PARA=
+Gera arquivo de "spool"=0
+Comando de "spool"=
+Modo do comando de "spool"=
+Fecha última página"=0
+Imprimir em arquivo=0
+Concatena arquivo impressao=0
+Nome arquivo impressao=
+Inicialização da Impressora=
+Delay para descarga=3

@@ -1,0 +1,25 @@
+[Default]
+Default=CV3
+[Lista]
+Transp Nro 0=CV3
+Transp Nro 1=RPCV3
+[CV3]
+Protocolo=4
+Múltiplo=0
+Host=000
+Nome=ABCD
+Conexão=1
+EBCDIC=1
+Edita mensagem=1
+Edita mensagem só no CANDE=0
+Remove NULL=0
+[RPCV3]
+Protocolo=4
+Múltiplo=0
+Host=000
+Nome=
+Conexão=0
+EBCDIC=0
+Edita mensagem=0
+Edita mensagem só no CANDE=0
+Remove NULL=0
