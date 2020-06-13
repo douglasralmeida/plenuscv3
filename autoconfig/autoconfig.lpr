@@ -72,9 +72,12 @@ var
   ArquivoIP: TStringList;
   NomeArquivoIP: String;
 begin
+  //Recebe o nome do arquivo de IPs pela linha de comando
   NomeArquivoIP := GetParams(1);
   if not FileExists(NomeArquivoIP) then
     raise Exception.Create(Format('Arquivo de IPs %s não encontrado.', [NomeArquivoIP]));
+  
+  //Carrega o arquivo de IPs na memória
   ArquivoIP := TStringList.Create;
   ArquivoIP.LoadFromFile(NomeArquivoIP);
   QuantidadeIPs := ArquivoIP.Count;
@@ -88,7 +91,7 @@ end;
 
 procedure TAplicacao.DoRun;
 begin
-  //análise sintatica dos parametros
+  //análise sintática dos parametros
   if (GetParamCount < 1) or (HasOption('h', 'help')) then
   begin
     ExibirAjuda;
@@ -127,6 +130,9 @@ begin
   Result := PlenusIP[I];
 end;
 
+{
+  Exibe ajuda da linha de comando
+}
 procedure TAplicacao.ExibirAjuda;
 const
   stringUso = 'Uso: %s <nomearquivoips>';
@@ -143,7 +149,7 @@ end;
 }
 function TAplicacao.GerarCodigo: String;
 const
-  Digitos: String = '0123456789QWERTYUIOPASDFGHJKLZXCVBNM';
+  Digitos: String = '0123456789QWERTYUIOPASDFGHJKLZXCVBNM'; //36 digitos
 var
   I: Integer;
 begin
@@ -154,8 +160,8 @@ begin
 end;
 
 {
-  Abre o arquivo de transporte do Plenus e insere um IP de conexão
-  sorteado aleatoriamente
+  Abre o arquivo de transporte do Plenus e insere o IP de conexão
+  e o código de acesso sorteados aleatoriamente.
 }
 procedure TAplicacao.ProcessarConfiguracao;
 var
@@ -164,6 +170,7 @@ var
   ArquivoTransporte: TStringList;
   IPEscolhido: String;
 begin
+  //Carrega o arquivo de transporte do Plenus na memória
   if not FileExists(TransportePlenus) then
     raise Exception.Create('Arquivo de Transporte do Plenus CV3 não encontrado.');
   ArquivoTransporte := TStringList.Create;
@@ -171,10 +178,14 @@ begin
   QuantidadeLinhas := ArquivoTransporte.Count;
   if QuantidadeLinhas = 0 then
     raise Exception.Create('Arquivo de Tranporte do Plenus CV3 está vazio.');
+
+  //Sorteia um IP aleatoriamente e salva no arquivo de tranporte
   IPEscolhido := EscolherIP;
   for I := 0 to QuantidadeLinhas - 1 do
     if ArquivoTransporte[I].StartsWith('Host=') then
       ArquivoTransporte[I] := 'Host=' + IPEscolhido;
+  
+  //Gera um código de acesso aleatório e salva no arquivo de transporte
   ArquivoTransporte[9] := 'Nome=' + GerarCodigo;
   ArquivoTransporte.SaveToFile(TransportePlenus);
   ArquivoTransporte.Free;

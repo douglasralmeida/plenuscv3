@@ -3,7 +3,6 @@
 
 #define AppName "Plenus CV3 para INSS"
 #define AppVersion "1.1"
-#define AppPublisher "In"
 #define AppPublisher "Instituto Nacional do Seguro Social"
 #define AppURL "https://github.com/douglasralmeida/plenuscv3"
 
@@ -93,13 +92,14 @@ Root: HKLM; Subkey: "Software\Classes\PlenusConfigFile"; ValueType: string; Valu
 Root: HKLM; Subkey: "Software\Classes\PlenusConfigFile\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\PLENUS.EXE,2"
 Root: HKLM; Subkey: "Software\Classes\PlenusConfigFile\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\PLENUS.EXE"" ""%1"""
 
-; Executa o balanceamento de carga
 [Run]
+; Executa a configuração automática
 Filename: "{app}\AUTOCONFIG.EXE"; \
   Parameters: "CV3.IP"; \
   Flags: runhidden; \
   StatusMsg: "Definindo configurações de acesso..."
 
+; Executa o Plenus após a finalização da instalação
 Filename: "{app}\PLENUS.EXE"; \
   Description: "Abrir o Plenus CV3 imediatamente."; \
   Parameters: "CV3.PLC"; \
@@ -110,8 +110,6 @@ Type: files; Name: "C:\WPLENUS\*";
 
 [Code]
 procedure CurStepChanged(CurStep: TSetupStep);
-var
-  Configuracoes: TStringList;
 begin
   if CurStep = ssInstall then
   begin
