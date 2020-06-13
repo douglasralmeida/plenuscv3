@@ -90,7 +90,7 @@ Name: "{group}\RPrint"; Filename: "{app}\RPRINT.EXE"; WorkingDir: "{app}"
 [Registry]
 Root: HKLM; Subkey: "Software\Classes\.PLC"; ValueType: string; ValueName: ""; ValueData: "PlenusConfigFile"; Flags: uninsdeletekey;
 Root: HKLM; Subkey: "Software\Classes\PlenusConfigFile"; ValueType: string; ValueName: ""; ValueData: "Arquivo de Configurações do Plenus"; Flags: uninsdeletekey;
-Root: HKLM; Subkey: "Software\Classes\PlenusConfigFile\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\ PLENUS.EXE,2"
+Root: HKLM; Subkey: "Software\Classes\PlenusConfigFile\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\PLENUS.EXE,2"
 Root: HKLM; Subkey: "Software\Classes\PlenusConfigFile\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\PLENUS.EXE"" ""%1"""
 
 ; Executa o balanceamento de carga
