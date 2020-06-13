@@ -1,9 +1,9 @@
 {
-    BALANCEAMENTO DE CARGA
+    CONFIGURAÇÃO AUTOMÁTICA DO PLENUS
 
-    Este programa irá procurar pelo arquivo Plenus.trp para
-    configurar o IP de acesso do emulador Plenus ao servidor
-    CV3 da Dataprev usando balanceamento de carga.
+    Este programa realiza duas tarefas:
+      * Configura o IP de acesso ao servidor CV3 usando balanceamento de carga.
+      * Gera um código de acesso so servidor CV3 aleatório.
 
     O programa lerá os IPs disponíveis do arquivo cv3.ip. Em
     seguida, sorterará um IP aleatoriamente para salvar no
@@ -16,9 +16,12 @@
     O CV3 possui dois IPs para acesso. Com o sorterio aleatório,
     espera-se que 50% das instalações usem o IP 1 e os 50% demais
     utilizem o IP 2.
+
+    O programa gerará um código de 10 dígitos, letras e números, aleatoriamente
+    para acesso ao Plenus.
 }
 
-program balcarga;
+program autoconfig;
 
 {$mode objfpc}{$H+}{$codepage UTF8}
 
@@ -38,6 +41,7 @@ type
   protected
     procedure AbrirArquivoIPs;
     function EscolherIP: String;
+    function GerarCodigo: String;
     procedure ProcessarConfiguracao;
     procedure DoRun; override;
   public
@@ -85,7 +89,6 @@ end;
 procedure TAplicacao.DoRun;
 begin
   //análise sintatica dos parametros
-  WriteLn(GetParamCount);
   if (GetParamCount < 1) or (HasOption('h', 'help')) then
   begin
     ExibirAjuda;
@@ -136,6 +139,21 @@ begin
 end;
 
 {
+  Gera uma sequencia de 10 digitos aleatoriamente.
+}
+function TAplicacao.GerarCodigo: String;
+const
+  Digitos: String = '0123456789QWERTYUIOPASDFGHJKLZXCVBNM';
+var
+  I: Integer;
+begin
+  Result := '1234567890';
+  Randomize;
+  for I := 1 to 10 do
+    Result[i] := Digitos[(Random(100) mod 36)+1];
+end;
+
+{
   Abre o arquivo de transporte do Plenus e insere um IP de conexão
   sorteado aleatoriamente
 }
@@ -157,6 +175,7 @@ begin
   for I := 0 to QuantidadeLinhas - 1 do
     if ArquivoTransporte[I].StartsWith('Host=') then
       ArquivoTransporte[I] := 'Host=' + IPEscolhido;
+  ArquivoTransporte[9] := 'Nome=' + GerarCodigo;
   ArquivoTransporte.SaveToFile(TransportePlenus);
   ArquivoTransporte.Free;
 end;

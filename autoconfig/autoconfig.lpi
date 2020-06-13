@@ -10,7 +10,7 @@
       </Flags>
       <SessionStorage Value="InProjectDir"/>
       <MainUnit Value="0"/>
-      <Title Value="Balanceador de Carga"/>
+      <Title Value="Configurador Automático"/>
       <UseAppBundle Value="False"/>
       <ResourceType Value="res"/>
     </General>
@@ -21,7 +21,7 @@
       <RevisionNr Value="12"/>
       <BuildNr Value="1"/>
       <Language Value="0416"/>
-      <StringTable CompanyName="Douglas R. Almeida" FileDescription="Balanceamento de Carga do Plenus" InternalName="BALCARGA" LegalCopyright="Program sem direitos autorais. Uso livre." OriginalFilename="balcarga.exe" ProductName="Plenus 1.1" ProductVersion="1.1"/>
+      <StringTable CompanyName="Douglas R. Almeida" FileDescription="Configuração Automática do Plenus" InternalName="AUTOCONFIG" LegalCopyright="Program sem direitos autorais. Uso livre." OriginalFilename="autoconfig.exe" ProductName="Plenus 1.1" ProductVersion="1.1"/>
     </VersionInfo>
     <BuildModes Count="2">
       <Item1 Name="DEBUG" Default="True"/>
@@ -30,7 +30,7 @@
           <Version Value="11"/>
           <PathDelim Value="\"/>
           <Target>
-            <Filename Value="balcarga"/>
+            <Filename Value="autoconfig"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
@@ -66,7 +66,7 @@
     </RunParams>
     <Units Count="1">
       <Unit0>
-        <Filename Value="balcarga.lpr"/>
+        <Filename Value="autoconfig.lpr"/>
         <IsPartOfProject Value="True"/>
       </Unit0>
     </Units>
@@ -75,7 +75,7 @@
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="balcargaDebug"/>
+      <Filename Value="autoconfigDebug"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
