@@ -6,6 +6,7 @@ Este documento descreve os novos recursos e as correções disponíveis durante 
 
 * Uso de teclas de função para comandos rápidos.
 * Geração automática do código de acesso ao servidor CV3.
+* Guia de Referência rápida.
 
 ## Versão 1.0.0 (abril/2020)
 

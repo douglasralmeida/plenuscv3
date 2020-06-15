@@ -33,7 +33,7 @@ SolidCompression=yes
 ShowLanguageDialog=no
 UninstallDisplayName={#AppName} {#AppVersion}
 UninstallDisplayIcon={app}\plenus.exe
-UninstallDisplaySize=6168576
+UninstallDisplaySize=5697536
 VersionInfoVersion=1.1.0
 VersionInfoProductVersion={#AppVersion}
 WizardImageFile=setupgrande.bmp
@@ -79,12 +79,14 @@ Source: "..\CONFIG\RPCV3.RPC"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\BIN\RPLPD.EXE"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\BIN\RPRINT.EXE"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\CONFIG\RPRINT.INI"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\BIN\GUIREF.PDF"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{commondesktop}\Plenus CV3"; Filename: "{app}\PLENUS.EXE"; Parameters: "CV3.PLC"; WorkingDir: "{app}"; Comment: "Conecte com servidor CV3 da Dataprev.";
 Name: "{group}\Plenus CV3"; Filename: "{app}\PLENUS.EXE"; Parameters: "CV3.PLC"; WorkingDir: "{app}"; Comment: "Conecte com servidor CV3 da Dataprev.";
 Name: "{group}\Configurador de Transporte"; Filename: "{app}\CONFIG.EXE"; WorkingDir: "{app}"
 Name: "{group}\RPrint"; Filename: "{app}\RPRINT.EXE"; WorkingDir: "{app}"
+Name: "{group}\Guia de Referência do Plenus"; Filename: "{app}\GUIREF.PDF"; WorkingDir: "{app}"; Comment: "Aprenda sobre as teclas de atalho do Plenus.";
 
 [Registry]
 Root: HKLM; Subkey: "Software\Classes\.PLC"; ValueType: string; ValueName: ""; ValueData: "PlenusConfigFile"; Flags: uninsdeletekey;

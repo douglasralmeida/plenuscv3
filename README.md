@@ -22,6 +22,7 @@ Além do instalador autônomo, este projeto inclui as seguintes alterações no 
 * Uso de teclas de função para comandos rápidos.
 * Configuração automática do módulo RPRINT.
 * Balanceamento de carga automática para os IPs de acesso do CV3.
+* Guia de Referência rápida.
 
 ## Comandos Rápidos
 O Plenus foi configurado com os seguintes comandos rápidos:
@@ -29,17 +30,17 @@ O Plenus foi configurado com os seguintes comandos rápidos:
 | Teclas de Atalho | Comando |
 |-----------------|---------|
 |F1|BEN SIS|
-|F2|PESPCF|
-|F3|PESNOM|
-|F4|PESNIT|
-|F5|PESINS|
-|F6|INFBEN|
-|F7|TITULA|
-|F8|INSTIT|
-|F9|DEPEND|
-|F10|REPRES|
-|F11|HISCRE|
-|F12|HISCAL|
+|F2|Volta para o SISBEN|
+|F3|PESPCF|
+|F4|PESNOM|
+|F5|PESNIT|
+|F6|PESINS|
+|F7|INFBEN|
+|F8|TITULA|
+|F9|INSTIT|
+|F10|DEPEND|
+|F11|REPRES|
+|F12|HISCRE|
 ||
 |CTRL+F1|CONSIT|
 |CTRL+F2|CONHAB|
@@ -60,7 +61,7 @@ O Plenus foi configurado com os seguintes comandos rápidos:
 |SHIFT+F1|HISMED|
 |SHIFT+F2|HISOCR|
 |SHIFT+F3|HISCP|
-|SHIFT+F4|HISCNS|
+|SHIFT+F10|HISCNS|
 |SHIFT+F11|HISOCR|
 |SHIFT+F12|LIBDUP|
 
