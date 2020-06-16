@@ -105,7 +105,7 @@ Filename: "{app}\AUTOCONFIG.EXE"; \
 Filename: "{app}\PLENUS.EXE"; \
   Description: "Abrir o Plenus CV3 imediatamente."; \
   Parameters: "CV3.PLC"; \
-  Flags: postinstall nowait skipifsilent unchecked
+  Flags: postinstall nowait skipifsilent checked
 
 [UninstallDelete]
 Type: files; Name: "C:\WPLENUS\*";
